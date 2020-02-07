@@ -9,6 +9,8 @@
     "cleverLinks": true,
     "monospaceLinks": true
   },
-  "recurse": true,
-  "destination": "./docs/"
+  "opts": {
+    "recurse": true,
+    "destination": "./docs/"
+  }
 }
