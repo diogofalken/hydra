@@ -62,7 +62,7 @@ app.use(middlewares.errorHandler);
 
 /**
  * Port that API will listen
- * @type {number}
+ * @type {number|string}
  */
 const port = process.env.PORT || 1337;
 app.listen(port, () => {
