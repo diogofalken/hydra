@@ -3,6 +3,10 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
+const mongoose = require('mongoose');
+
+/** Started using Env variables using dotenv */
+require('dotenv').config();
 
 /** Middleware import */
 const middlewares = require('./middlewares');
@@ -15,6 +19,15 @@ const middlewares = require('./middlewares');
 
 /** Creates an Express Application */
 const app = express();
+
+/*
+ * Connects to DB using mongoose
+ * @see <a href="https://www.npmjs.com/package/mongoose">Mongoose npm</a>
+ */
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 /**
  * HTTP request logger middleware for node.js
@@ -37,7 +50,7 @@ app.use(helmet());
  */
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.CORS_ORIGIN,
   }),
 );
 
