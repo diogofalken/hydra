@@ -4,7 +4,7 @@ Hydra is a full stack application to store / list restaurants that I have visite
 
 ### TODO
 
-- [ ] Setup Server
+- [x] Setup Server
   - [x] Install Dependencies  
          - **Dependencies:**  
          - express  
@@ -20,12 +20,12 @@ Hydra is a full stack application to store / list restaurants that I have visite
   - [x] Install / Setup Linter
   - [x] Setup Express App
   - [x] Setup **Not Found** and **Error** Middlewares
-- [ ] Model DB
+- [x] Model DB
   - What data will we store?
-- [ ] Setup Mongoose Model(s)
-- [ ] POST / restaurant
+- [x] Setup Mongoose Model(s)
+- [x] POST / restaurant
   - Create a new restaurant entry
-- [ ] GET / restaurant
+- [x] GET / restaurant
   - List all restaurant entries
 - [ ] Setup Client
 - [ ] Create Form to add a new entry
