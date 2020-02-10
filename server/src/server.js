@@ -11,6 +11,9 @@ require('dotenv').config();
 /** Middleware import */
 const middlewares = require('./middlewares');
 
+/** Restaurant routes file import */
+const restaurants = require('./api/restaurant');
+
 /**
  * @file server.js is the root file for this API
  * @author Diogo Costa
@@ -54,11 +57,23 @@ app.use(
   }),
 );
 
+/**
+ * This is a built-in middleware function in Express. It parses incoming
+ * requests with JSON payloads and is based on body-parser
+ */
+app.use(express.json());
+
 app.get('/', (req, res) => {
   res.json({
     message: '🚀',
   });
 });
+
+/**
+ * When /api/restaurants the app fowards to routes file for restaurant
+ * @see {@link restaurant}
+ */
+app.use('/api/restaurants', restaurants);
 
 /**
  * Not Found is responsible for when a route is not found

@@ -4,7 +4,7 @@
  */
 
 /** Import Schema and Model from mongoose */
-const { Schema, Model } = require('mongoose');
+const mongoose = require('mongoose');
 
 /**
  * Restaurant Schema
@@ -18,9 +18,9 @@ const { Schema, Model } = require('mongoose');
 
 /**
  * Holds the Restaurant Schema
- * @type {Schema}
+ * @type {mongoose.Schema}
  */
-const RestaurantSchema = new Schema(
+const RestaurantSchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -46,8 +46,7 @@ const RestaurantSchema = new Schema(
 
 /**
  * Restaurant Model
- * @type {Model}
  */
-const Restaurant = Model.create('Restaurant', RestaurantSchema);
+const Restaurant = mongoose.model('Restaurant', RestaurantSchema);
 
 module.exports = Restaurant;
